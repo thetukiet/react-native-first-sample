@@ -122,3 +122,6 @@ var MainView = React.createClass({
 <br/>
 <br/>
 <b>Using multiple style objrects</b>
+```ruby
+<Image source={{uri: this.props.avatar}}  style={[styles.avatarImage,{width: this.state.picS}]}/>
+```
