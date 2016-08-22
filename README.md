@@ -19,9 +19,9 @@ An example of managing list items with fake data. This example includes:
 <br/>
 <h3><b>Screen shots</b></h3>
 <p align="center">
-  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="250" />
-  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png" width="250" margin-left="30px"/>
-  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" width="250" style="margin-left:30px;"/>
+  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="220" />
+  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png" width="220" margin-left="30px"/>
+  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" width="220" style="margin-left:30px;"/>
 </p>
 
 <br/>
