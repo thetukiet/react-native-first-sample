@@ -125,3 +125,11 @@ var MainView = React.createClass({
 ```ruby
 <Image source={{uri: this.props.avatar}}  style={[styles.avatarImage,{width: this.state.picS}]}/>
 ```
+
+<br/>
+<br/>
+
+<h3><b>References</b></h3>
+- <a href='https://facebook.github.io/react-native/docs/getting-started.html'>Facebook React Native Document</a>
+- <a href='https://medium.com/@Jpoliachik/react-native-s-layoutanimation-is-awesome-4a4d317afd3e#.co2m4f7rk'>React Native’s LayoutAnimation Article </a><b>From Author Justin Poliachik</b>
+
