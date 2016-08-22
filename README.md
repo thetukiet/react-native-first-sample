@@ -27,6 +27,10 @@ SAMPLE
       |--mainView.js
       |--personItemView.js
       |--utility.js
+  |--Assests
+      |--Images
+      	   |...
+      
 ```
 <br/>
 <h4>Some sample code<h4>
