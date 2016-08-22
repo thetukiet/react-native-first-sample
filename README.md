@@ -16,7 +16,9 @@ An example of managing list items with fake data. This example includes:
 - Separate style-object from component code and using multiple styles in component
 
 <br/>
-<h3>Project structure</h3>
+<br/>
+
+<h3><b>Project structure</b></h3>
 ```
 SAMPLE
   |...
@@ -34,7 +36,9 @@ SAMPLE
       
 ```
 <br/>
-<h4>Some sample code<h4>
+<br/>
+
+<h3><b>Some sample code</b></h3>
 <b>Navigator using</b>
 
 ```ruby
