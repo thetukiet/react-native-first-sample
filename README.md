@@ -8,3 +8,4 @@ An example of managing list items with fake data. This example includes:
 - Local data with SQLite
 - Simple animation on component
 - Using <a href='https://facebook.github.io/react-native/docs/refreshcontrol.html'><b>RefreshControl</b></a> effect in automatically loading more data when scrolling to the end of the list
+- Separate style-object from component code and using multiple styles in component
