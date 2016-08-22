@@ -26,9 +26,9 @@ An example of managing list items with fake data. This example includes:
   ![alt text][logo2]
   ![alt text][logo3]
 </p>
-[logo]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Login Screen"
-[logo2]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Main Screen"
-[logo3]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Refresh control shows loading status"
+[logo]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png "Login Screen"
+[logo2]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png "Main Screen"
+[logo3]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png "Refresh control shows loading status"
 <br/>
 <br/>
 <h3><b>Project structure</b></h3>
