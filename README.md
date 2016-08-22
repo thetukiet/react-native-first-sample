@@ -17,7 +17,7 @@ An example of managing list items with fake data. This example includes:
 
 <br/>
 <h3>Project structure</h3>
-
+```
 SAMPLE
   |--index.android.js
   |--styles.js
@@ -27,7 +27,7 @@ SAMPLE
       |--mainView.js
       |--personItemView.js
       |--utility.js
-  
+```
 <br/>
 <h4>Some sample code<h4>
 <b>Navigator using</b>
