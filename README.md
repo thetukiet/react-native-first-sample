@@ -109,3 +109,7 @@ var MainView = React.createClass({
      );
   }
 ```
+
+<br/>
+<br/>
+<b>Using multiple style objrects</b>
