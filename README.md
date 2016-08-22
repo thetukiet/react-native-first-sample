@@ -15,7 +15,33 @@ An example of managing list items with fake data. This example includes:
     );
   }
 ```
+
 - Using component <a href='https://facebook.github.io/react-native/docs/props.html'>props</a> and <a href='https://facebook.github.io/react-native/docs/state.html'>states</a>
+
+```ruby
+  var <b>PersonItemView</b> = React.createClass({
+    getInitialState() {           
+        return {
+    	    id: this.props.id,
+          picS:70
+  	    };
+  	},
+  	render() {
+      return (
+          <TouchableOpacity>
+              <Image source={{uri: this.props.avatar}}  style={{width: this.state.picS, height: this.state.picS}}/>
+          </TouchableOpacity>
+      );
+    }
+  });
+```
+```ruby
+  let personView = this.state.data.map(function(row, i){
+  	return <<b>PersonItemView</b>
+              avatar={row.Avatar} />
+  });
+```
+
 - Local data with SQLite
 - Simple animation on component
 - Using <a href='https://facebook.github.io/react-native/docs/refreshcontrol.html'><b>RefreshControl</b></a> effect in automatically loading more data when scrolling to the end of the list
