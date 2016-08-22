@@ -18,11 +18,16 @@ An example of managing list items with fake data. This example includes:
 <br/>
 <br/>
 <h3><b>Screen shots</b></h3>
+[image1]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Login Screen"
+[image2]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Main Screen"
+[image3]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Refresh control shows loading status"
 <p align="center">
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="250"/>
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png" width="250"/>
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" width="250"/>
-  [logo]: https://raw.githubusercontent.com/thetukiet/react-native-first-sample/master/ScreenShots/s1.png "Refresh control shows loading status"
+  ![alt text][image1]
+  ![alt text][image2]
+  ![alt text][image3]
 </p>
 
 <br/>
