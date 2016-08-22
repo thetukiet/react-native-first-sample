@@ -23,7 +23,7 @@ An example of managing list items with fake data. This example includes:
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png" width="250"/>
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" width="250"/>
 </p>
-[logo]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png "Refresh control shows loading status"
+[logo]: "https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" "Refresh control shows loading status"
 <br/>
 <br/>
 <h3><b>Project structure</b></h3>
