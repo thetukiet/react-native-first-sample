@@ -1,0 +1,339 @@
+
+******** INSTALLING *********
+npm install --save react-native-sqlite-storage
+
+--------------------------------
+//const React = require("react-native");
+
+//import firebase from 'firebase';
+
+//import * as Firebase from 'firebase';
+const Firebase = require('firebase');
+//var firebase = require('firebase/app');
+// all 3 are optional and you only need to require them at the start
+
+
+//const firebaseRef = new Firebase('https://react-database.firebaseio.com');
+
+//const firebase = require("firebase");
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAp8SWmlidicjZQMyepTPIMtfduoAEUPtI",
+//   authDomain: "react-database.firebaseapp.com",
+//   databaseURL: "https://react-database.firebaseio.com",
+//   storageBucket: "react-database.appspot.com"
+// };
+
+
+//const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+  submitData: function(){
+    //debugger;    
+    //const  rootRef = this.getRef();
+    //rootRef.set({SampleDataFromReactNative: this.state.submitText});
+    firebaseRef.set({SampleDataFromReactNative: this.state.submitText});
+    //this.callAlert(this.state.submitText); 
+  }
+
+----------------------------------------------
+How to use (Android):
+
+Step 1 - NPM Install
+
+npm install --save react-native-sqlite-storage
+
+Step 2 - Update Gradle Settings
+
+// file: android/settings.gradle
+...
+
+include ':react-native-sqlite-storage'
+project(':react-native-sqlite-storage').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sqlite-storage/src/android')
+
+Step 3 - Update app Gradle Build
+
+// file: android/app/build.gradle
+...
+
+dependencies {
+    ...
+    compile project(':react-native-sqlite-storage')
+}
+
+Step 4 - Register React Package (this should work on React version but if it does not , try the ReactActivity based approach. Note: for version 3.0.0 and below you would have to pass in the instance of your Activity to the SQLitePluginPackage constructor
+
+...
+import org.pgsqlite.SQLitePluginPackage;
+
+public class MainActivity extends Activity implements DefaultHardwareBackBtnHandler {
+
+    private ReactInstanceManager mReactInstanceManager;
+    private ReactRootView mReactRootView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mReactRootView = new ReactRootView(this);
+        mReactInstanceManager = ReactInstanceManager.builder()
+                .setApplication(getApplication())
+                .setBundleAssetName("index.android.bundle")  // this is dependant on how you name you JS files, example assumes index.android.js
+                .setJSMainModuleName("index.android")        // this is dependant on how you name you JS files, example assumes index.android.js
+                .addPackage(new MainReactPackage())
+                .addPackage(new SQLitePluginPackage())       // register SQLite Plugin here
+                .setUseDeveloperSupport(BuildConfig.DEBUG)
+                .setInitialLifecycleState(LifecycleState.RESUMED)
+                .build();
+        mReactRootView.startReactApplication(mReactInstanceManager, "AwesomeProject", null); //change "AwesomeProject" to name of your app
+        setContentView(mReactRootView);
+    }
+...
+
+
+Alternative approach on newer versions of React Native (0.18+). Note: for version 3.0.0 and below you would have to pass in the instance of your Activity to the SQLitePluginPackage constructor
+
+import org.pgsqlite.SQLitePluginPackage;
+
+public class MainActivity extends ReactActivity {
+  ......
+
+  /**
+   * A list of packages used by the app. If the app uses additional views
+   * or modules besides the default ones, add more packages here.
+   */
+    @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+        new SQLitePluginPackage(),   // register SQLite Plugin here
+        new MainReactPackage());
+    }
+}
+
+Step 5 - Require and use in Javascript - see full examples (callbacks and Promise) in test directory.
+
+// file: index.android.js
+
+var React = require('react-native');
+var SQLite = require('react-native-sqlite-storage')
+...
+
+---------------------------------------------------------------------------
+
+showOptionAlert(handler){
+    var text;
+    if(handler && handler.Text){
+      text = handler.Text;
+    }
+    Alert.alert( 
+      'Alert Title', 
+      'Some content', 
+      [ 
+        {text: 'Foo', onPress: () => this.callAlert(text + 'Foo Pressed!')}, 
+        {text: 'Nek', onPress: () => this.callAlert(text + 'Nek Pressed!')}, 
+        {text: 'Baz', onPress: () => this.callAlert(text + 'Baz Pressed!')}, 
+      ]
+    );
+  },
+
+
+--------------------------------------------------------------------
+
+import React, { Component } from 'react';
+import LocalDbHelper from './lib/localdbHelper';
+import {
+  Alert,
+  AppRegistry,
+  StyleSheet,
+  TextInput,
+  Platform,
+  UIManager,
+  Text,
+  Image,
+  Navigator,
+  RefreshControl,
+  ListView,
+  ScrollView,
+  TouchableHighlight,
+  View
+} from 'react-native';
+
+var RCTUIManager = require('NativeModules').UIManager;
+var PersonItemView = require('./lib/personItemView');
+const styles = require('./styles.js')
+const dataHelper = LocalDbHelper.getInstance();
+
+
+var SCREEN_WIDTH = require('Dimensions').get('window').width;
+var BaseConfig = Navigator.SceneConfigs.FloatFromRight;
+
+var CustomLeftToRightGesture = Object.assign({}, BaseConfig.gestures.pop, {
+  snapVelocity: 8,
+  edgeHitWidth: SCREEN_WIDTH,
+});
+
+var CustomSceneConfig = Object.assign({}, BaseConfig, {
+  springTension: 100,
+  springFriction: 1,
+  gestures: {
+    pop: CustomLeftToRightGesture,
+  }
+});
+
+var scrollView;
+
+var HelloSample = React.createClass({
+  getInitialState() {    
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental(true)
+    }
+    dataHelper.initializeDB();
+    //dataHelper.getLocalDataRecord('Person', this.personRetrieveCallBack);
+    return {
+    	data:[],
+      instancyData:{},
+      isRefreshing:false,
+      scrollToNewRecord:false,
+      loadMorable:true
+  	};
+	},
+
+  componentWillMount(){
+    this.initData();
+  },
+
+  componentDidUpdate(prevProps, prevState){
+        // let innerScrollView = this._scrollView.refs.InnerScrollView;
+        // let scrollView = this._scrollView.refs.ScrollView;
+
+        // requestAnimationFrame(() => {
+        //     innerScrollView.measure((innerScrollViewX, innerScrollViewY, innerScrollViewWidth, innerScrollViewHeight) => {
+        //         scrollView.measure((scrollViewX, scrollViewY, scrollViewWidth, scrollViewHeight) => {
+        //             var scrollTo = innerScrollViewHeight - scrollViewHeight + innerScrollViewY;
+
+        //             if (innerScrollViewHeight < scrollViewHeight) {
+        //                 return;
+        //             }
+
+        //             this._scrollView.scrollTo(scrollTo);
+        //         });
+        //     });
+        // });
+  },
+
+  render() {
+    let personView = this.state.data.map(function(row, i){
+    	return <PersonItemView 
+                key={i}
+                index={i}
+                id={row.ID}
+                fullName={row.FullName} 
+                phoneNumber={row.PhoneNumber} 
+                avatar={row.Avatar} />
+    });
+
+    return (
+      <View style={styles.container}>
+        <View style={styles.topPanel}> 
+          <TouchableHighlight style={styles.topButton} onPress={this.addNewRecord}>
+            <View style={styles.buttonView}>
+              <Image source={require('./Assests/Images/add-group.png')} style={styles.iconImage}/>
+              <Text style={styles.buttonText}>Add New Person</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <ScrollView id='person-list' style={styles.personListView} 
+          ref={(obj) => { scrollView = obj; }}
+          onContentSizeChange={(x,y)=>{
+            if(this.state.scrollToNewRecord){
+              setTimeout(()=>scrollView.scrollTo({x:0, y:y}),50);
+              this.setState({scrollToNewRecord:false});
+            }
+          }}
+          onScroll={this.onScroll}
+          contentOffset={{x: 0, y: 80}}
+          contentInset={{top: 70, bottom: 80}}
+          refreshControl={
+            <RefreshControl
+              refreshing={this.state.isRefreshing}
+              colors={['#d3d3d3']} //#2E64FE #F6CEF5
+              progressBackgroundColor="#252525"
+            />
+          }
+        >
+          {personView}
+        </ScrollView>  
+      </View>
+    );
+  },
+
+
+  onScroll(event){
+    var currentY = event.nativeEvent.contentOffset.y;
+    var offsetHeight = event.nativeEvent.layoutMeasurement.height;
+    var scrollHeight = event.nativeEvent.contentSize.height;    
+    if((currentY + offsetHeight) >= scrollHeight){
+      this.setState({isRefreshing: true});
+      setTimeout(() => {
+        var nextId = this.state.data.length;
+        var moreData = dataHelper.getTestPersons(10, nextId);
+        for (let i = 0; i < moreData.length; i++) {
+            this.state.data.push(moreData[i]);
+        }
+        this.setState({data: this.state.data, isRefreshing: false});
+      },1);
+    }
+  },
+
+  addNewRecord(){
+    this.setState({scrollToNewRecord:true});
+    var nextId = this.state.data.length;
+    var moreData = dataHelper.getTestPersons(1, nextId);
+    for (let i = 0; i < moreData.length; i++) {
+        this.state.data.push(moreData[i]);
+    }
+    this.setState({
+      data: this.state.data,
+      isRefreshing:false
+    });
+  },
+  
+  insertSuccessfull(result){
+    if(result.insertId > 0){
+      var insertedRow = {
+        ID:result.insertId,
+        FullName:this.state.instancyData.FullName,
+        Avatar:this.state.instancyData.Avatar,
+        PhoneNumber: this.state.instancyData.PhoneNumber
+      };
+
+      this.state.data.push(insertedRow);
+      this.setState({data: this.state.data});
+    }
+  },
+
+  initData(){
+    var testData = dataHelper.getTestPersons(10,0);
+    for (let i = 0; i < testData.length; i++) {
+        this.state.data.push(testData[i]);
+    }
+    this.setState({data: this.state.data});
+  },
+
+  personRetrieveCallBack(results){
+    var len = results.rows.length;
+    for (let i = 0; i < len; i++) {
+        let row = results.rows.item(i);
+        this.state.data.push(row);
+    }
+    this.setState({data: this.state.data});
+  },
+
+  callAlert(message){
+    Alert.alert( 
+      'React Native Example', 
+      message
+    );
+  }
+});
+
+AppRegistry.registerComponent('HelloSample', () => HelloSample);
