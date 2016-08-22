@@ -19,7 +19,7 @@ An example of managing list items with fake data. This example includes:
 - Using component <a href='https://facebook.github.io/react-native/docs/props.html'>props</a> and <a href='https://facebook.github.io/react-native/docs/state.html'>states</a>
 
 ```ruby
-  var <b>PersonItemView</b> = React.createClass({
+  var PersonItemView = React.createClass({
     getInitialState() {           
         return {
     	    id: this.props.id,
@@ -37,7 +37,7 @@ An example of managing list items with fake data. This example includes:
 ```
 ```ruby
   let personView = this.state.data.map(function(row, i){
-  	return <<b>PersonItemView</b>
+  	return <PersonItemView
               avatar={row.Avatar} />
   });
 ```
