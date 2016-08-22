@@ -4,6 +4,17 @@
 
 An example of managing list items with fake data. This example includes:
 - Manage Views with Navigator
+
+```ruby
+  render() {
+    return (
+      <Navigator
+        initialRoute={{id:2 }}
+        renderScene={this.renderScenes}
+        configureScene={this.configureScenes} />
+    );
+  }
+```
 - Using component <a href='https://facebook.github.io/react-native/docs/props.html'>props</a> and <a href='https://facebook.github.io/react-native/docs/state.html'>states</a>
 - Local data with SQLite
 - Simple animation on component
