@@ -77,3 +77,32 @@ SAMPLE
   });
 ```
 
+<br/>
+<br/>
+<b>Using RefreshControl</b>
+```ruby
+var MainView = React.createClass({
+   getInitialState() {
+       return {
+           isRefreshing:false
+       };
+   },
+
+   render() {
+      return (
+        <View style={styles.container}>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                refreshing={this.state.isRefreshing}
+                colors={['#d3d3d3']} //#2E64FE #F6CEF5
+                progressBackgroundColor="#252525"
+                />
+            }
+            >
+            {personView}
+            </ScrollView>  
+        </View>
+    );
+  },
+```
