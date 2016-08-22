@@ -122,7 +122,16 @@ var MainView = React.createClass({
 <br/>
 <br/>
 <b>Using multiple style objrects</b>
+
 ```ruby
+var styles = StyleSheet.create({
+    avatarImage:{
+        marginLeft:10
+    }
+});
+
+... 
+
 <Image source={{uri: this.props.avatar}}  style={[styles.avatarImage,{width: this.state.picS}]}/>
 ```
 
@@ -131,6 +140,6 @@ var MainView = React.createClass({
 
 <h3><b>References</b></h3>
 - <a href='https://facebook.github.io/react-native/docs/getting-started.html'>Facebook React Native Document</a>
-- <a href='https://rnplay.org/apps/PxQpag'>Navigator Sample</a> From Author Johnny Snow
+- <a href='https://rnplay.org/apps/PxQpag'>Navigator Sample </a><b>From Author Johnny Snow</b>
 - <a href='https://medium.com/@Jpoliachik/react-native-s-layoutanimation-is-awesome-4a4d317afd3e#.co2m4f7rk'>React Native’s LayoutAnimation Article </a><b>From Author Justin Poliachik</b>
 
