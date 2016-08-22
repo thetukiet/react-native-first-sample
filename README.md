@@ -1,6 +1,6 @@
 # react-native-first-sample
 
-<h2><b>Introduction</b></h2>
+<h3><b>Introduction</b></h3>
 
 An example of managing list items with fake data. This example includes:
 - Using component <a href='https://facebook.github.io/react-native/docs/props.html'>props</a> and <a href='https://facebook.github.io/react-native/docs/state.html'>states</a>
