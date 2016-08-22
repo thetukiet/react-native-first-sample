@@ -19,16 +19,11 @@ An example of managing list items with fake data. This example includes:
 <br/>
 <h3><b>Screen shots</b></h3>
 <p align="center">
-  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="250"/>
-  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png" width="250"/>
-  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" width="250"/>
-  ![alt text][logo]
-  ![alt text][logo2]
-  ![alt text][logo3]
+  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="250" style="{margin-left:30px}"/>
+  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png" width="250" style="{margin-left:30px}"/>
+  <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png" width="250" style="{margin-left:30px}"/>
 </p>
-[logo]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png "Login Screen"
-[logo2]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s2.png "Main Screen"
-[logo3]: https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s3.png "Refresh control shows loading status"
+
 <br/>
 <br/>
 <h3><b>Project structure</b></h3>
