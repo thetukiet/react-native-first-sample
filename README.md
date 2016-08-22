@@ -16,6 +16,7 @@ An example of managing list items with fake data. This example includes:
   }
 ```
 
+
 - Using component <a href='https://facebook.github.io/react-native/docs/props.html'>props</a> and <a href='https://facebook.github.io/react-native/docs/state.html'>states</a>
 
 ```ruby
@@ -29,7 +30,7 @@ An example of managing list items with fake data. This example includes:
   	render() {
       return (
           <TouchableOpacity>
-              <Image source={{uri: this.props.avatar}}  style={{width: this.state.picS, height: this.state.picS}}/>
+              <Image source={{uri: this.props.avatar}}  style={{width: this.state.picS}}/>
           </TouchableOpacity>
       );
     }
@@ -37,10 +38,10 @@ An example of managing list items with fake data. This example includes:
 ```
 ```ruby
   let personView = this.state.data.map(function(row, i){
-  	return <PersonItemView
-              avatar={row.Avatar} />
+  	return <PersonItemView avatar={row.Avatar} />
   });
 ```
+
 
 - Local data with SQLite
 - Simple animation on component
