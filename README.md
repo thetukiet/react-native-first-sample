@@ -22,16 +22,16 @@ An example of managing list items with fake data. This example includes:
 ```ruby
   var PersonItemView = React.createClass({
     getInitialState() {           
-        return {
-    	    id: this.props.id,
-          picS:70
-  	    };
+      return {
+  	    id: this.props.id,
+        picS:70
+	    };
   	},
   	render() {
       return (
-          <TouchableOpacity>
-              <Image source={{uri: this.props.avatar}}  style={{width: this.state.picS}}/>
-          </TouchableOpacity>
+        <TouchableOpacity>
+            <Image source={{uri: this.props.avatar}}  style={{width: this.state.picS}}/>
+        </TouchableOpacity>
       );
     }
   });
