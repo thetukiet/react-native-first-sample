@@ -54,6 +54,7 @@ SAMPLE
 
 <br/>
 <b>States and Props</b>
+Declaration
 ```ruby
   var PersonItemView = React.createClass({
     getInitialState() {           
@@ -71,6 +72,7 @@ SAMPLE
     }
   });
 ```
+Using
 ```ruby
   let personView = this.state.data.map(function(row, i){
   	return <PersonItemView avatar={row.Avatar} />
@@ -87,22 +89,22 @@ var MainView = React.createClass({
            isRefreshing:false
        };
    },
-
+   
    render() {
       return (
         <View style={styles.container}>
             <ScrollView
               refreshControl={
                 <RefreshControl
-                refreshing={this.state.isRefreshing}
-                colors={['#d3d3d3']} //#2E64FE #F6CEF5
-                progressBackgroundColor="#252525"
+                  refreshing={this.state.isRefreshing}
+                  colors={['#d3d3d3']}
+                  progressBackgroundColor="#252525"
                 />
-            }
+              }
             >
-            {personView}
-            </ScrollView>  
+            ...
+            </ScrollView>
         </View>
-    );
-  },
+     );
+  }
 ```
