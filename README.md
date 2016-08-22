@@ -53,7 +53,7 @@ SAMPLE
 ```
 
 <br/>
-<b>States and Props</b>
+<b>States and Props</b><br/>
 Declaration
 ```ruby
   var PersonItemView = React.createClass({
@@ -72,7 +72,8 @@ Declaration
     }
   });
 ```
-Using
+<br/>
+And using
 ```ruby
   let personView = this.state.data.map(function(row, i){
   	return <PersonItemView avatar={row.Avatar} />
