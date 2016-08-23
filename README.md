@@ -31,16 +31,16 @@ An example of managing list items with fake data. This example includes:
 ```
 SAMPLE
   |...
-  |--index.android.js
-  |--styles.js
-  |--lib
-      |--localdbHelper.js
-      |--loginView.js
-      |--mainView.js
-      |--personItemView.js
-      |--utility.js
-  |--Assests
-      |--Images
+  |_ index.android.js
+  |_ styles.js
+  |_ lib
+      |_ localdbHelper.js
+      |_ loginView.js
+      |_ mainView.js
+      |_ personItemView.js
+      |_ utility.js
+  |_ Assests
+      |_ Images
       	   |...
       
 ```
