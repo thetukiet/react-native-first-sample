@@ -2,7 +2,7 @@
 
 ## Introduction
 
-An example of managing list items with fake data. This example includes:
+This is a simple example of managing list items with fake data. Including stuff:
 - Manage Views with <a href='https://facebook.github.io/react-native/docs/navigation.html'>Navigator</a>
 
 - Using component <a href='https://facebook.github.io/react-native/docs/props.html'>props</a> and <a href='https://facebook.github.io/react-native/docs/state.html'>states</a>
