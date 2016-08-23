@@ -127,7 +127,7 @@ var MainView = React.createClass({
 
 <br/>
 <br/>
-<b>Using multiple style objrects</b>
+<b>Using multiple style objects</b>
 > personItemView.js
 
 ```ruby
