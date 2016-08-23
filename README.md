@@ -17,7 +17,7 @@ An example of managing list items with fake data. This example includes:
 
 <br/>
 <br/>
-<h3><b>Screen shots</b></h3>
+<h3><b>Screenshots</b></h3>
 <p align="center">
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="270" />
    
