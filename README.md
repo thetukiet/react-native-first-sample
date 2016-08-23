@@ -1,6 +1,6 @@
 # react-native-first-sample
 
-<h3><b>Introduction</b></h3>
+## Introduction
 
 An example of managing list items with fake data. This example includes:
 - Manage Views with <a href='https://facebook.github.io/react-native/docs/navigation.html'>Navigator</a>
@@ -17,7 +17,7 @@ An example of managing list items with fake data. This example includes:
 
 <br/>
 <br/>
-<h3><b>Screenshots</b></h3>
+## Screenshots
 <p align="center">
   <img src="https://github.com/thetukiet/react-native-first-sample/blob/master/ScreenShots/s1.png" width="270" />
    
@@ -27,7 +27,7 @@ An example of managing list items with fake data. This example includes:
 
 <br/>
 <br/>
-<h3><b>Project structure</b></h3>
+## Project structure
 ```
 SAMPLE
   |...
@@ -47,7 +47,7 @@ SAMPLE
 <br/>
 <br/>
 
-<h3><b>Some sample code</b></h3>
+## Some sample code
 <b>Navigator using</b>
 
 ```ruby
@@ -138,7 +138,7 @@ var styles = StyleSheet.create({
 <br/>
 <br/>
 
-<h3><b>References</b></h3>
+## References
 - <a href='https://facebook.github.io/react-native/docs/getting-started.html'>Facebook React Native Document</a>
 - <a href='https://rnplay.org/apps/PxQpag'>Navigator Sample </a>From Author <b>Johnny Snow</b>
 - <a href='https://medium.com/@Jpoliachik/react-native-s-layoutanimation-is-awesome-4a4d317afd3e#.co2m4f7rk'>React Native’s LayoutAnimation Article </a>From Author <b>Justin Poliachik</b>
