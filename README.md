@@ -49,6 +49,7 @@ SAMPLE
 
 ## Some sample code
 <b>Navigator using</b>
+> index.android.js
 
 ```ruby
   render() {
@@ -64,6 +65,8 @@ SAMPLE
 <br/>
 <b>States and Props</b><br/>
 Declaration
+> personItemView.js
+
 ```ruby
   var PersonItemView = React.createClass({
     getInitialState() {           
@@ -83,6 +86,8 @@ Declaration
 ```
 <br/>
 And using
+> mainView.js
+
 ```ruby
   let personView = this.state.data.map(function(row, i){
   	return <PersonItemView avatar={row.Avatar} />
@@ -92,6 +97,8 @@ And using
 <br/>
 <br/>
 <b>Using RefreshControl</b>
+> mainView.js
+
 ```ruby
 var MainView = React.createClass({
    getInitialState() {
@@ -122,6 +129,7 @@ var MainView = React.createClass({
 <br/>
 <br/>
 <b>Using multiple style objrects</b>
+> personItemView.js
 
 ```ruby
 var styles = StyleSheet.create({
