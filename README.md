@@ -1,4 +1,3 @@
-# react-native-first-sample
 
 ## Introduction
 
