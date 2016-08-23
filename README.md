@@ -64,7 +64,7 @@ SAMPLE
 <br/>
 <b>States and Props</b><br/>
 Declaration
-> personItemView.js
+> _personItemView.js_
 
 ```ruby
   var PersonItemView = React.createClass({
@@ -85,7 +85,7 @@ Declaration
 ```
 <br/>
 And using
-> mainView.js
+> _mainView.js_
 
 ```ruby
   let personView = this.state.data.map(function(row, i){
@@ -96,7 +96,7 @@ And using
 <br/>
 <br/>
 <b>Using RefreshControl</b>
-> mainView.js
+> _mainView.js_
 
 ```ruby
 var MainView = React.createClass({
@@ -128,7 +128,7 @@ var MainView = React.createClass({
 <br/>
 <br/>
 <b>Using multiple style objects</b>
-> personItemView.js
+> _personItemView.js_
 
 ```ruby
 var styles = StyleSheet.create({
