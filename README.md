@@ -48,7 +48,7 @@ SAMPLE
 
 ## Some sample code
 <b>Navigator using</b>
-> index.android.js
+> _index.android.js_
 
 ```ruby
   render() {
